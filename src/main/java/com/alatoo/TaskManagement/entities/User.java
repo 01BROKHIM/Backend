@@ -11,6 +11,7 @@ import java.util.List;
 @Setter
 @Builder
 @Entity
+@Table(name = "\"user\"")
 public class User {
 
     @Id
@@ -19,8 +20,8 @@ public class User {
     private String username;
     private String email;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Task> assignedTasks;
+    @OneToMany(mappedBy = "user")
+    private List<Task> tasks;
 
 }
 
